@@ -1,0 +1,6 @@
+
+.channel-list{
+    border: 1px solid lightgrey;
+    height: 100px;
+    overflow: scroll;
+}

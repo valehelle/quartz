@@ -1,0 +1,13 @@
+.sidebar-project{
+  flex-grow: 5;
+  background-color: yellow;
+}
+
+.sidebar-channel{
+  flex-grow: 5;
+  background-color: green;
+}
+.sidebar{
+  overflow: scroll;
+  height: 100vh;
+}

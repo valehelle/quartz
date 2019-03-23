@@ -1,0 +1,6 @@
+.on-hover-lightgrey:hover {
+    background-color: lightgrey;
+  }
+ .selected-channel {
+    background-color: #ededed;
+  }

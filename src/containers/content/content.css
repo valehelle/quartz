@@ -1,0 +1,9 @@
+.push-listener{
+    height: 100vh;
+    padding-top: 20px;
+    overflow: scroll;
+}
+.terminal-line{
+    border-left: 1px solid #ededed;
+    height: 100vh;
+}

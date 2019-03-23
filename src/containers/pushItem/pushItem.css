@@ -1,0 +1,8 @@
+.on-hover-lightgrey:hover {
+    background-color: lightgrey;
+  }
+
+
+.selected {
+  background-color: #ededed;
+}

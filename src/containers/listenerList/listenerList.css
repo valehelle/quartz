@@ -1,0 +1,9 @@
+
+.listener-list{
+    border: 1px solid lightgrey;
+    height: 80px;
+    overflow: scroll;
+}
+.remove-btn{
+    margin-left: 10px;
+}

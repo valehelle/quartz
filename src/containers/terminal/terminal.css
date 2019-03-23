@@ -1,0 +1,10 @@
+.terminal{
+    padding-top: 20px;
+    
+}
+.terminal-log{
+    border: 1px solid lightgray;
+    overflow:scroll; 
+    height: 70vh;
+
+}
