@@ -51,7 +51,7 @@ const createProject = (state, action) => {
   const newProject = {
     [projectId]: {
       id: projectId,
-      url: 'localhost:3000',
+      url: 'ws:localhost:3000',
       endpoint: '/socket',
       parameters: '{"key":"value"}',
       channelIds: [channelId]
