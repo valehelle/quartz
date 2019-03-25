@@ -46,10 +46,10 @@ class Project extends Component {
       const params = {
         url,
         endpoint,
-        parameters: this.props.project.params,
+        parameters: this.props.project.parameters,
       }
       this.props.clearTerminal({})
-      if(isJson(this.props.project.params)){
+      if(isJson(this.props.project.parameters)){
         this.props.connectSocket(params)
       }else{
         alert("Parameters must be in JSON format")
@@ -82,7 +82,7 @@ class Project extends Component {
                 </div>
                 <div className="form-group">
                   <label>Parameters</label>
-                  <textarea name="parameters" rows="2" cols="50"  className="form-control"  value={this.props.project ? this.props.project.params : ''}onChange={this.handleChange} />
+                  <textarea name="parameters" rows="2" cols="50"  className="form-control"  value={this.props.project ? this.props.project.parameters : ''}onChange={this.handleChange} />
                 </div>
                 <button className="btn btn-success col-md-12" onClick={this.onClickConnect}>
                   Connect

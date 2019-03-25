@@ -16,12 +16,12 @@ const uuidv4 = require('uuid/v4');
 let socket
 let phxChannel
 
+
 function initWebsocket(url, endpoint, params) {
     const param = {
         params: JSON.parse(params)
     }
     return eventChannel(emitter => {
-
 
         socket = new Socket(url, endpoint, param)
         socket.onError( (error) =>{
@@ -54,9 +54,9 @@ function initWebsocket(url, endpoint, params) {
             }
             emitter(terminalActions.createLog(params))
         })
+
         socket.connect()
-        
-        
+
       // unsubscribe function
       return () => {
         socket.disconnect()
@@ -86,18 +86,28 @@ function* initiateSocket(action) {
     }
     yield put (terminalActions.createLog(params))
 
-    const socketChannel = yield call(initWebsocket, url, endpoint, parameters)
-    
     try{
-        while (true) {
-            const action = yield take(socketChannel)
-            yield put(action)
+        const socketChannel = yield call(initWebsocket, url, endpoint, parameters)
+        try{
+            while (true) {
+                const action = yield take(socketChannel)
+                yield put(action)
+            }
+        }finally {
+            if (yield cancelled()) {
+                socketChannel.close()
+            }    
         }
-    }finally {
-        if (yield cancelled()) {
-            socketChannel.close()
-        }    
-      }
+    }catch(e){
+        const logId = uuidv4()
+        const params = {
+            name: 'ERROR',
+            payload: '',
+            logId: logId
+        }
+        yield put (terminalActions.createLog(params))
+    }
+
     
 }
 

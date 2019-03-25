@@ -757,8 +757,7 @@ export class Socket {
       Ajax.appendParams(this.endPoint, this.params()), {vsn: VSN})
     if(uri.charAt(0) !== "/"){ return uri }
     if(uri.charAt(1) === "/"){ return `${this.protocol()}:${uri}` }
-
-    return `${this.protocol()}://${this.url}${uri}`
+    return `${this.url}${uri}`
   }
 
   /**

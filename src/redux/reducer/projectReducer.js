@@ -53,7 +53,7 @@ const createProject = (state, action) => {
       id: projectId,
       url: 'localhost:3000',
       endpoint: '/socket',
-      params: '{"key":"value"}',
+      parameters: '{"key":"value"}',
       channelIds: [channelId]
     }
   }
@@ -82,7 +82,7 @@ const updateProject = (state, action) => {
     [selectedProjectId]: {
       url,
       endpoint,
-      params: parameters,
+      parameters: parameters,
       channelIds: selectedProject.channelIds,
       id: selectedProjectId
     }
