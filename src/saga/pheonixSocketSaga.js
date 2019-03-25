@@ -38,7 +38,7 @@ function initWebsocket(url, endpoint, params) {
         socket.onOpen(function(){ 
             const logId = uuidv4()
             const params = {
-                name: 'SOCKET_OPENED',
+                name: 'SOCKET_CONNECTED',
                 payload: '',
                 logId: logId
             }
@@ -101,8 +101,10 @@ function* initiateSocket(action) {
     }catch(e){
         const logId = uuidv4()
         const params = {
-            name: 'ERROR',
-            payload: '',
+            name: 'CONNECTION_ERROR',
+            payload: {
+                "description": "Please make sure your url is correct. ws for http and wss for https"
+            },
             logId: logId
         }
         yield put (terminalActions.createLog(params))
