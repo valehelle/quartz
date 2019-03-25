@@ -109,7 +109,7 @@ const createListener = (state, action) => {
   const listenerId = action.params.listenerId
   const selectedChannelId = getSelectedId(state)
   const channel  = getById(selectedChannelId, state)
-  const listenerIds = Array.concat(listenerId, channel.listenerIds)
+  const listenerIds = Array.prototype.concat.apply(listenerId, channel.listenerIds)
   
   const newChannel = {
     [selectedChannelId]: {
@@ -131,7 +131,7 @@ const createPush = (state, action) => {
   const pushId = action.params.pushId
   const selectedChannelId = getSelectedId(state)
   const channel  = getById(selectedChannelId, state)
-  const pushIds = Array.concat(pushId, channel.pushIds)
+  const pushIds = Array.prototype.concat.apply(pushId, channel.pushIds)
   
   const newChannel = {
     [selectedChannelId]: {

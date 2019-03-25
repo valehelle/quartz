@@ -61,7 +61,7 @@ const createProject = (state, action) => {
   return {
     ...state, 
     entities:{
-      allIds: Array.concat(projectId,state.entities.allIds),
+      allIds: Array.prototype.concat.apply(projectId,state.entities.allIds),
       byId: {...state.entities.byId, ...newProject},
     },
     ui:{
@@ -103,7 +103,7 @@ const createChannel = (state, action) => {
   const selectedChannelId = action.params.channelId
   const selectedProjectId = getSelectedId(state)
   const project  = getById(selectedProjectId, state)
-  const channelIds = Array.concat(selectedChannelId, project.channelIds)
+  const channelIds = Array.prototype.concat.apply(selectedChannelId, project.channelIds)
   
   const newChannelProject = {
     [selectedProjectId]: {

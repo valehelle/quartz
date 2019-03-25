@@ -20,6 +20,7 @@ let phxChannel
 function initWebsocket(url, endpoint, params) {
     const param = {
         params: JSON.parse(params)
+        
     }
     return eventChannel(emitter => {
 
@@ -103,7 +104,7 @@ function* initiateSocket(action) {
         const params = {
             name: 'CONNECTION_ERROR',
             payload: {
-                "description": "Please make sure your url is correct. ws for http and wss for https"
+                "description": "Please make sure your url is correct. If you are using Firefox and you are connecting to http server, you need to disable network.websocket.allowInsecureFromHTTPS in about:config"
             },
             logId: logId
         }
