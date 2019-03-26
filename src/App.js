@@ -39,10 +39,10 @@ class App extends Component {
       <Provider store={store}>
         <div className="container-fluid main-container">
           <div className="row sidebar-content">
-            <div className="col-md-2 side-bar">
+            <div className="col-md-3 side-bar">
               <Sidebar/>
             </div>
-            <div className="col-md-10 content">
+            <div className="col-md-9 content">
               <Content/>
             </div>
           </div>

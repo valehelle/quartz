@@ -13,11 +13,11 @@ class Content extends Component {
     render() {
       return (
             <div  className="row">
-              <div className="col-md-4 push-listener">
+              <div className="col-md-6 col-lg-5 push-listener">
                 <Listener/>
                 <Push/>
               </div>
-              <div className="col-md-8 terminal-line">
+              <div className="col-md-6 col-lg-7 terminal-line">
                 <Terminal/>
               </div>
             </div>

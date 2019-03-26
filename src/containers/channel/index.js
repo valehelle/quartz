@@ -43,7 +43,7 @@ class Channel extends Component {
                   <label>Topic</label>
                   <input disabled={!this.props.channel}type="text" className="form-control"  value={this.props.channel ? this.props.channel.topic : ''} onChange={this.handleTopicChange} />
                 </div>
-                <button className="btn btn-success col-md-12" onClick={this.onClickJoin} disabled={!this.props.isProjectConnected}>
+                <button className="btn btn-success col-md-12" onClick={this.onClickJoin} disabled={!(this.props.isProjectConnected && this.props.channel)}>
                   Join
                 </button>
             </div>

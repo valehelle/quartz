@@ -227,7 +227,6 @@ function* deleteListener(action) {
     for(const key in allListener) {
         const listenerId = allListener[key]
         const listener = getListenerById(listenerId, state)
-        console.log('off for ' + listener.eventName)
         phxChannel.off(listener.eventName)
     }
     const params = action.params

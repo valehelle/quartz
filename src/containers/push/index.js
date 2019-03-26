@@ -24,14 +24,15 @@ class Push extends Component {
 
     onClickSend = () => {
       const {
-        event,
+        eventName,
         body
-      } = this.state
-      const params = {
-        eventName: event,
-        body
-      }
-      if(isJson(this.props.project.params)){
+      } = this.props.push
+
+      if(isJson(body)){
+        const params = {
+          eventName,
+          body
+        }
         this.props.sendPush(params)
       }else{
         alert("Body must be in JSON format")
