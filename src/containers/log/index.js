@@ -16,7 +16,6 @@ class LogData extends Component {
       return (
                 <div>
                   <ReactJson src={this.props.log.payload} name={this.props.log.name} collapsed={2} displayDataTypes={false}/>
-             
                 </div>
       )
     }

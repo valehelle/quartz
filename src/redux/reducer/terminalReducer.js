@@ -36,7 +36,7 @@ const createLog = (state, action) => {
     [logId]: {
       "payload": {
         ...payload,
-        time: now.getTime()
+        time: now.toString()
       },
       name,
       id: logId,
