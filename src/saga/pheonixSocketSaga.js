@@ -165,11 +165,10 @@ function createListener(allListener, state){
             const listenerId = allListener[key]
             const listener = getListenerById(listenerId, state)
             phxChannel.on(listener.eventName, (payload) => {
-                console.log('listen for ' + listener.eventName)
                 const logId = uuidv4()
                 const params = {
                     name: listener.eventName,
-                    payload: payload,
+                    payload: {"payload": payload},
                     logId: logId
                 }
                 emitter(terminalActions.createLog(params))
@@ -180,10 +179,8 @@ function createListener(allListener, state){
             for(const key in allListener) {
                 const listenerId = allListener[key]
                 const listener = getListenerById(listenerId, state)
-                console.log('off for ' + listener.eventName)
                 phxChannel.off(listener.eventName)
             }
-            console.log('close')
         }
     })
 }

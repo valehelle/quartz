@@ -42,11 +42,11 @@ class ListenerItem extends Component {
         return(
           <div className="container" onClick={this.listenerClick}>
            <div className="row listener-item on-hover-pointer on-hover-lightgrey selected-listener ">
-             <div className="col-md-10">
+             <div className="col-md-8">
               {this.props.listener.eventName}
              </div>
-             <div className="col-md-2" onClick={this.playPauseClick}>
-             <button className="btn btn-primary  btn-sm col-md-12" type="button" disabled={!this.props.isChannelJoined}>{this.props.isListening ? <ion-icon name="pause"></ion-icon> : <ion-icon name="play"></ion-icon>}</button>
+             <div className="col-md-4" onClick={this.playPauseClick}>
+             <button className="btn btn-primary btn-sm col-md-8 play-pause" type="button" disabled={!this.props.isChannelJoined}>{this.props.isListening ? <ion-icon name="pause"></ion-icon> : <ion-icon name="play"></ion-icon>}</button>
              </div>
            </div>
           </div>

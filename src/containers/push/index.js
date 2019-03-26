@@ -67,7 +67,7 @@ class Push extends Component {
                   <textarea disabled={!this.props.push} name="body" rows="4" cols="50" type="text" className="form-control"  value={this.props.push ? this.props.push.body  : ''} onChange={this.handleChange} />
                 </div>
 
-                <button className="btn btn-success col-md-12" onClick={this.onClickSend} disabled={!this.props.isChannelJoined}>
+                <button className="btn btn-success col-md-12 send-btn" onClick={this.onClickSend} disabled={!this.props.isChannelJoined}>
                   Send
                 </button>
             </div>

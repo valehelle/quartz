@@ -10,5 +10,5 @@
     padding-bottom: 2px;
   }
   .play-pause{
-    border: 1px solid black;
+    float: right;
   }

@@ -66,10 +66,10 @@ class ListenerList extends Component {
             </div>
           </div>
           <div className="col-md-12 new-remove">
-            <button className="btn btn-primary  btn-sm col-md-1" type="button" onClick={this.onClickNew} disabled={!this.props.channel}>
+            <button className="btn btn-primary  btn-sm col-md-2" type="button" onClick={this.onClickNew} disabled={!this.props.channel}>
             <ion-icon name="add"></ion-icon>
             </button>
-            <button className="btn btn-danger  btn-sm col-md-1 remove-btn" type="button" onClick={this.onClickRemove} disabled={this.isDisabled(this.props.listenerIds)}>
+            <button className="btn btn-danger  btn-sm col-md-2 remove-btn" type="button" onClick={this.onClickRemove} disabled={this.isDisabled(this.props.listenerIds)}>
             <ion-icon name="remove"></ion-icon>
             </button>
           </div>
